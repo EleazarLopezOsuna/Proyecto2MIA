@@ -104,3 +104,15 @@ FALTAN PUBLICACIONES (Crear un trigger para aumentar o crear un nuevo tag)
 --Query para insertar un nuevo tag
 	INSERT INTO proyecto.etiqueta(tag_name) VALUES('');
 
+--Query para obtener a todos los usuarios que no son amigos
+	SELECT usuario.user_id, usuario.fullname, usuario.picture FROM proyecto.usuario WHERE usuario.user_id NOT IN
+	(
+		SELECT conexion.first_user_id FROM proyecto.usuario
+		JOIN proyecto.conexion ON (conexion.first_user_id = usuario.user_id)
+		WHERE conexion.second_user_id = 1
+		UNION
+		SELECT conexion.second_user_id FROM proyecto.usuario
+		JOIN proyecto.conexion ON (conexion.second_user_id = usuario.user_id)
+		WHERE conexion.first_user_id = 1
+	) 
+	AND usuario.user_id != 1;

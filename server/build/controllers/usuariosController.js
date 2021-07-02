@@ -12,19 +12,29 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.loginController = void 0;
+exports.usuariosController = void 0;
 const oracledb_1 = __importDefault(require("oracledb"));
 const database_1 = __importDefault(require("../database"));
-class LoginControllers {
-    verificarLogin(req, res) {
+class UsuariosControllers {
+    obtenerUsuarios(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = "SELECT login('" + req.body['username'] + "','" + req.body['password'] + "') AS resultado FROM DUAL";
+            const query = "SELECT usuario.user_id, usuario.fullname, usuario.picture FROM proyecto.usuario WHERE usuario.user_id NOT IN" +
+                "(" +
+                "   SELECT conexion.first_user_id FROM proyecto.usuario" +
+                "   JOIN proyecto.conexion ON (conexion.first_user_id = usuario.user_id)" +
+                "   WHERE conexion.second_user_id = " + req.body['codigo'] +
+                "   UNION" +
+                "   SELECT conexion.second_user_id FROM proyecto.usuario" +
+                "   JOIN proyecto.conexion ON (conexion.second_user_id = usuario.user_id)" +
+                "   WHERE conexion.first_user_id = " + req.body['codigo'] +
+                ")" +
+                "AND usuario.user_id != " + req.body['codigo'];
             const pendingResult = (yield database_1.default).execute(query, [], {
                 outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
             });
             const result = (yield pendingResult).rows;
-            res.send(result[0]);
+            res.send(result);
         });
     }
 }
-exports.loginController = new LoginControllers();
+exports.usuariosController = new UsuariosControllers();
