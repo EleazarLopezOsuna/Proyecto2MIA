@@ -1,13 +1,7 @@
 # Proyecto2MIA
 
 ## Entidad Relacion
-```mermaid
-erDiagram
-USUARIO ||--o{ CONEXION : tiene
-USUARIO ||--o{ PUBLICACION: hace
-USUARIO ||--o{ MENSAJE: envia
-ETIQUETA
-```
+![Screenshot 2021-07-02 231231](https://user-images.githubusercontent.com/48371383/124343713-fe19b700-db8a-11eb-9584-379424d16ed1.png)
 
 ## DDL
 
@@ -157,16 +151,4 @@ ETIQUETA
 >
 ## Arquitectura Implementada
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
-```mermaid
-sequenceDiagram
-Frontend Angular ->> Backend NodeJs: Consume
-Backend NodeJs ->> Frontend Angular: Retorna Informacion
-Backend NodeJs ->> Base de Datos Oracle: Consulta
-Base de Datos Oracle ->> Backend NodeJs: Resultado del query
-```
+![Screenshot 2021-07-02 231116](https://user-images.githubusercontent.com/48371383/124343701-de828e80-db8a-11eb-8cd7-cf47ada749b5.png)
