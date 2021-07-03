@@ -1,8 +1,27 @@
 <div class="container">
     <div class="row mb-1">
-        <textarea name="" id="" cols="75" rows="5"></textarea>
+        <textarea name="" id="" cols="75" rows="5" [(ngModel)]="publicacion.contenido"></textarea>
     </div>
     <div class="form-floating" align="right">
-        <button class="btn btn-dark col-1">Post</button>
+        <button class="btn btn-dark col-1" (click)="publicar()">Post</button>
+    </div>
+</div>
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 p-1" *ngFor="let publicacion of publicaciones">
+            <div class="card text-center">
+                <div class="card-header">
+                    {{publicacion.FULLNAME}}
+                </div>
+                <div class="card-body">
+                    <p>
+                        {{publicacion.CONTENT}}
+                    </p>
+                    <p>
+                        {{publicacion.POST_DATE}}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
