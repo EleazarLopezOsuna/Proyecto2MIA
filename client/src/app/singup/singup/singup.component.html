@@ -1,1 +1,17 @@
-<p>singup works!</p>
+<div class="container p-4">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingInput" name="username" [(ngModel)]="singup.username" placeholder="name@example.com">
+        <label for="floatingInput">Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="singup.password" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingName" name="name" [(ngModel)]="singup.name" placeholder="Name">
+        <label for="floatingName">Name</label>
+      </div>
+      <div class="form-floating">
+        <button class="btn btn-success col-12" (click)="singUp()">Iniciar Sesion</button>
+      </div>
+</div>

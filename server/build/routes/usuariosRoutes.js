@@ -8,7 +8,8 @@ class LoginRoutes {
         this.config();
     }
     config() {
-        this.router.get('/', usuariosController_1.usuariosController.obtenerUsuarios);
+        this.router.post('/all', usuariosController_1.usuariosController.obtenerUsuarios);
+        this.router.post('/newRelacion', usuariosController_1.usuariosController.newRelacion);
     }
 }
 const usuariosRoutes = new LoginRoutes();

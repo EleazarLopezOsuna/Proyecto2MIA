@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginFormComponent } from './components/login-form/login-form.component'
-import { DesconocidosComponent } from './desconocidos/desconocidos/desconocidos.component';
 import { LoginLayoutComponent } from './layouts/login-layout/login-layout.component';
 import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 import { SingupLayoutComponent } from './layouts/singup-layout/singup-layout.component';
+import { UsuariosLayoutComponent } from './layouts/usuarios-layout/usuarios-layout.component';
 import { LoginComponent } from './login/login/login.component';
 import { MainComponent } from './main/main.component';
 import { SingupComponent } from './singup/singup/singup.component';
@@ -23,15 +23,6 @@ const routes: Routes = [
       {
         path: 'main',
         loadChildren: () => import('./main/main.module').then(module => module.MainModule)
-      },
-      {
-        path: '',
-        redirectTo: '/usuarios',
-        pathMatch: 'full'
-      },
-      {
-        path: 'usuarios',
-        loadChildren: () => import('./desconocidos/desconocidos.module').then(module => module.DesconocidosModule)
       }
     ]
   },
@@ -64,6 +55,21 @@ const routes: Routes = [
       {
         path: 'singup',
         loadChildren: () => import('./singup/singup.module').then(module => module.SingupModule)
+      }
+    ]
+  },
+  {
+    path: '',
+    component: UsuariosLayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/usuarios',
+        pathMatch: 'full'
+      },
+      {
+        path: 'usuarios',
+        loadChildren: () => import('./usuarios/usuarios.module').then(module => module.UsuariosModule)
       }
     ]
   }

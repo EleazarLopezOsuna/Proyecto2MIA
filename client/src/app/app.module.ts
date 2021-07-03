@@ -13,6 +13,8 @@ import { SingupLayoutComponent } from './layouts/singup-layout/singup-layout.com
 
 import { UsersService } from './services/usuarios/users.service';
 import { LoginService } from './services/login/login.service';
+import { UsuariosLayoutComponent } from './layouts/usuarios-layout/usuarios-layout.component';
+import { SolicitudLayoutComponent } from './layouts/solicitud-layout/solicitud-layout.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { LoginService } from './services/login/login.service';
     LoginFormComponent,
     LoginLayoutComponent,
     MainLayoutComponent,
-    SingupLayoutComponent
+    SingupLayoutComponent,
+    UsuariosLayoutComponent,
+    SolicitudLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { LoginService } from './services/login/login.service';
   ],
   providers: [
     UsersService,
-    LoginService
+    LoginService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

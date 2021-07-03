@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { SingupRoutingModule } from './singup-routing.module';
 import { SingupComponent } from './singup/singup.component';
@@ -11,7 +13,9 @@ import { SingupComponent } from './singup/singup.component';
   ],
   imports: [
     CommonModule,
-    SingupRoutingModule
+    SingupRoutingModule,
+    HttpClientModule,
+    FormsModule
   ]
 })
 export class SingupModule { }

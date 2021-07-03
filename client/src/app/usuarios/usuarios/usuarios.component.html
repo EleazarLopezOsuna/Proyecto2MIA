@@ -10,13 +10,13 @@
             <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/main">Feed</a>
+            <a class="nav-link" href="/main">Feed</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/messages">Messages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/usuarios">Users</a>
+            <a class="nav-link" href="/usuarios">Users  </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/pending">Solicitudes</a>
@@ -25,3 +25,19 @@
       </div>
     </div>
 </nav>
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 p-1" *ngFor="let usuario of usuarios">
+            <div class="card text-center">
+                <div class="card-header">
+                    {{usuario.FULLNAME}}
+                </div>
+                <div class="card-body">
+                    <button class="btn btn-dark" (click)="agregarUsuario(usuario.USER_ID)">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

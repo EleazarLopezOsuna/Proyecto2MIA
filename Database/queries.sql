@@ -1,5 +1,5 @@
 --Procedimiento para crear usuario
-	CREATE OR REPLACE PROCEDURE crearUsuario (var_usuario IN VARCHAR2, var_password IN VARCHAR2, var_fullname IN VARCHAR2, var_picture IN BLOB) AS
+	CREATE OR REPLACE PROCEDURE crearUsuario (var_usuario IN VARCHAR2, var_password IN VARCHAR2, var_fullname IN VARCHAR2, var_picture IN VARCHAR) AS
 	cod_user NUMBER;
 	CURSOR c1 is SELECT COUNT(*) FROM proyecto.usuario WHERE usuario.username = var_usuario;
 	BEGIN

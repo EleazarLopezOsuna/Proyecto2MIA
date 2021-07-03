@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DesconocidosComponent } from './desconocidos.component';
+import { UsuariosLayoutComponent } from './usuarios-layout.component';
 
-describe('DesconocidosComponent', () => {
-  let component: DesconocidosComponent;
-  let fixture: ComponentFixture<DesconocidosComponent>;
+describe('UsuariosLayoutComponent', () => {
+  let component: UsuariosLayoutComponent;
+  let fixture: ComponentFixture<UsuariosLayoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DesconocidosComponent ]
+      declarations: [ UsuariosLayoutComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DesconocidosComponent);
+    fixture = TestBed.createComponent(UsuariosLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

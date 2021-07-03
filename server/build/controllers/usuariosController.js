@@ -36,5 +36,15 @@ class UsuariosControllers {
             res.send(result);
         });
     }
+    newRelacion(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const query = "SELECT f2('" + req.body['usuario1'] + "','" + req.body['usuario2'] + "') AS resultado FROM DUAL";
+            const pendingResult = (yield database_1.default).execute(query, [], {
+                outFormat: oracledb_1.default.OUT_FORMAT_OBJECT
+            });
+            const result = (yield pendingResult).rows;
+            res.send(result[0]);
+        });
+    }
 }
 exports.usuariosController = new UsuariosControllers();
