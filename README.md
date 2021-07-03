@@ -152,3 +152,7 @@
 ## Arquitectura Implementada
 
 ![Screenshot 2021-07-02 231116](https://user-images.githubusercontent.com/48371383/124343701-de828e80-db8a-11eb-8cd7-cf47ada749b5.png)
+
+## Oracle Version
+
+![Screenshot 2021-07-02 231354](https://user-images.githubusercontent.com/48371383/124343752-3a4d1780-db8b-11eb-8732-04fb17f297ca.png)
